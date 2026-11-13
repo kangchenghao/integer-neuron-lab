@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=77.0.3"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "integer-neuron-lab"
+version = "0.1.0"
+description = "Reproducible exact-integer neuron experiments with independent dense and event models"
+requires-python = ">=3.10"
+license = "MIT"
+license-files = ["LICENSE"]
+readme = "README.md"
+dependencies = []
+
+[project.scripts]
+integer-neuron-lab = "integer_neuron_lab.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

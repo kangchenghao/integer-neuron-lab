@@ -1,0 +1,126 @@
+{
+  "schema": "public-source-artifact-v1",
+  "description": "Hashes of public source, tests, documentation and checked local results; excludes this manifest and Git/build caches.",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "sha256": "d60f352d0db1404c70afb4bb8b2ca3fd1c610572aa40720e8a0b7baa7885418c",
+      "bytes": 19
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "sha256": "269cbcae0d3bf8434230ad062db57e247fd9697a1d44a55c9d864a6c891cbcbb",
+      "bytes": 740
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "f489880ae95425380f4a7d0a7031f763203d7f5d2baae7137a6219335d61a62d",
+      "bytes": 126
+    },
+    {
+      "path": "AI_USAGE.md",
+      "sha256": "8c9bdec0f7a25786aebaf45ee321a78d5ce790c498b444f62688c23d526a762c",
+      "bytes": 1165
+    },
+    {
+      "path": "CONTRIBUTIONS.md",
+      "sha256": "1b00bbedd553d1d1b6c6b34a2b4da135e47b6659c35e92e409a40bc7f79e9db9",
+      "bytes": 2955
+    },
+    {
+      "path": "docs/contract.md",
+      "sha256": "af54405559311fff3ea99413c07380e6176d8e8d664fa88b6b9421ae7a762716",
+      "bytes": 2878
+    },
+    {
+      "path": "docs/experiments.md",
+      "sha256": "a1dc71875f2063fb8d40b03d395d2cae089e025b57b9706cb6892931ae088f65",
+      "bytes": 1991
+    },
+    {
+      "path": "docs/learning.md",
+      "sha256": "454b53efb1e704c420fd7c92108d45e66271e9718fe8173936f050dd8f18df94",
+      "bytes": 1306
+    },
+    {
+      "path": "docs/validation.md",
+      "sha256": "c519f5f7cd04a5b81142e4a781b602d5d17a065a9933b2d466961a174d2d2f10",
+      "bytes": 1625
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "7288896c99ce3944e8a73cb8a08495930f59a58135afe53e03e9fc286f46a263",
+      "bytes": 1088
+    },
+    {
+      "path": "pyproject.toml",
+      "sha256": "757af547b1bb9109799fc650ec5d9d83f03a01facd63ee9aa3b0fe40accf26d2",
+      "bytes": 477
+    },
+    {
+      "path": "README.md",
+      "sha256": "fbc9b728324e509bc92a6f5faaa424220f1e187bb4820d6ca7ed8de75047f286",
+      "bytes": 5335
+    },
+    {
+      "path": "README.zh-CN.md",
+      "sha256": "ca9afea8bad22cb51f2cd8475d5ff0cebd12dd28ba05d7433924830b3718900b",
+      "bytes": 1766
+    },
+    {
+      "path": "results/demo.csv",
+      "sha256": "ba952d6db684f74a5902051812c6f6df633a2b608396eb5e73af48de51d3060a",
+      "bytes": 8017
+    },
+    {
+      "path": "results/demo.json",
+      "sha256": "b784c96f324c0ba9bfda70e392b12d710de4a35e8f64e471d561aa45fcd9b03b",
+      "bytes": 28655
+    },
+    {
+      "path": "results/verification.json",
+      "sha256": "412c6aeb4f0156f3dd2c93f08e109d27a7a4eeabd0c3420dabc6c8522f6c138b",
+      "bytes": 7192
+    },
+    {
+      "path": "run.py",
+      "sha256": "71f13aeeaea4543d7f338cb92b0ec1b200ae229cda629c86dd77cd6cee213ed8",
+      "bytes": 280
+    },
+    {
+      "path": "src/integer_neuron_lab/__init__.py",
+      "sha256": "c130548e328b40e19a1c405de7967d5ae80dca39c8a936bae71fc7e2e628d29c",
+      "bytes": 439
+    },
+    {
+      "path": "src/integer_neuron_lab/__main__.py",
+      "sha256": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+      "bytes": 48
+    },
+    {
+      "path": "src/integer_neuron_lab/cli.py",
+      "sha256": "b9d4923216b4eb6386c8ffdb720a57cd9f36e2aea7a25123e280ddf9f05d543b",
+      "bytes": 8999
+    },
+    {
+      "path": "src/integer_neuron_lab/events.py",
+      "sha256": "cdae0c65958b8f6643f71f929053194fe1d645f86b2d0cb620da0d181bd8c413",
+      "bytes": 5119
+    },
+    {
+      "path": "src/integer_neuron_lab/model.py",
+      "sha256": "b24f7068c378745a9d19b5c24e355ec8c20a16011d38bf336a2ebe4027f6de48",
+      "bytes": 5715
+    },
+    {
+      "path": "tests/test_cli.py",
+      "sha256": "22303805860065f3a72e5ef24597445ef213bdda57ccf66bd32c78d96f9582cc",
+      "bytes": 5937
+    },
+    {
+      "path": "tests/test_models.py",
+      "sha256": "cb7e5d11259bb533e984ef45ea4c51b51acc5bf6f3f498e5afe550ec86a206eb",
+      "bytes": 10739
+    }
+  ]
+}

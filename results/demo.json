@@ -1,0 +1,1020 @@
+{
+  "schema": "integer-neuron-experiment-v1",
+  "all_outputs_exact": true,
+  "environment": {
+    "python": "3.13.6",
+    "implementation": "CPython",
+    "system": "Windows",
+    "machine": "AMD64"
+  },
+  "source_sha256": {
+    "src/integer_neuron_lab/__init__.py": "c130548e328b40e19a1c405de7967d5ae80dca39c8a936bae71fc7e2e628d29c",
+    "src/integer_neuron_lab/__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+    "src/integer_neuron_lab/cli.py": "b9d4923216b4eb6386c8ffdb720a57cd9f36e2aea7a25123e280ddf9f05d543b",
+    "src/integer_neuron_lab/events.py": "cdae0c65958b8f6643f71f929053194fe1d645f86b2d0cb620da0d181bd8c413",
+    "src/integer_neuron_lab/model.py": "b24f7068c378745a9d19b5c24e355ec8c20a16011d38bf336a2ebe4027f6de48",
+    "run.py": "71f13aeeaea4543d7f338cb92b0ec1b200ae229cda629c86dd77cd6cee213ed8"
+  },
+  "parameters": {
+    "neurons": 32,
+    "horizon": 256,
+    "repeats": 3
+  },
+  "measurement": {
+    "included": [
+      "model input validation",
+      "event model jump-table construction per invocation",
+      "state updates",
+      "spike/query output construction",
+      "final materialization"
+    ],
+    "excluded": [
+      "fixture generation",
+      "JSON hashing/serialization",
+      "explicit garbage collection between repeats"
+    ],
+    "timer": "perf_counter_ns; median with all raw samples retained",
+    "unit": "host Python nanoseconds, not hardware cycles or energy"
+  },
+  "limitations": [
+    "Synthetic inputs only; no clinical, network or biophysical validation.",
+    "Three fixed seeds and small workloads are an exploratory matrix, not statistical generalization.",
+    "Both algorithms implement the same documented toy integer dynamics; neither is claimed novel.",
+    "Frequent queries and dense events can erase the event method's advantage.",
+    "Host timings vary by interpreter, machine, ordering, load and run."
+  ],
+  "rows": [
+    {
+      "seed": 20261112,
+      "activity": "0",
+      "query_mode": "final",
+      "neurons": 32,
+      "horizon": 256,
+      "input_events": 0,
+      "actual_input_density": 0.0,
+      "query_count": 1,
+      "spike_count": 15,
+      "all_outputs_exact": true,
+      "fixture_sha256": "36d4f7e30f67beba6e837b18910b26e56217a29d9d240a6a58ea7eefb358d5c9",
+      "output_sha256": "7ad5fe7d9e49b41af57d6f8b9c2493be800843a8cc9537264340e25edf557b78",
+      "dense_ns": [
+        666300,
+        632000,
+        634900
+      ],
+      "event_ns": [
+        81800,
+        72100,
+        68800
+      ],
+      "dense_median_ns": 634900,
+      "event_median_ns": 72100,
+      "event_over_dense_time": 0.11356119073869901
+    },
+    {
+      "seed": 20261112,
+      "activity": "0",
+      "query_mode": "every8",
+      "neurons": 32,
+      "horizon": 256,
+      "input_events": 0,
+      "actual_input_density": 0.0,
+      "query_count": 32,
+      "spike_count": 15,
+      "all_outputs_exact": true,
+      "fixture_sha256": "f14b66b47d46be4f10ead89ce7b9813c16cbdfa7aced803808a68caa86d25d5e",
+      "output_sha256": "6087b77a5b5f92e379c9f1dbc5d5a2990da00a0a5204231640f50f20ee0275c5",
+      "dense_ns": [
+        640800,
+        640700,
+        791600
+      ],
+      "event_ns": [
+        425300,
+        431300,
+        428000
+      ],
+      "dense_median_ns": 640800,
+      "event_median_ns": 428000,
+      "event_over_dense_time": 0.6679151061173533
+    },
+    {
+      "seed": 20261112,
+      "activity": "0.01",
+      "query_mode": "final",
+      "neurons": 32,
+      "horizon": 256,
+      "input_events": 78,
+      "actual_input_density": 0.009521484375,
+      "query_count": 1,
+      "spike_count": 55,
+      "all_outputs_exact": true,
+      "fixture_sha256": "f4d4a7a16b89f54486bd18edf89771b79a93d4f621d84155c2846ddeb4c322d0",
+      "output_sha256": "a5dcb4b6e5e9f4d06a0ad6aaca081867dc6a0d7950bb171f9a987e45135b0844",
+      "dense_ns": [
+        6084000,
+        1969300,
+        1085200
+      ],
+      "event_ns": [
+        165400,
+        150400,
+        145200
+      ],
+      "dense_median_ns": 1969300,
+      "event_median_ns": 150400,
+      "event_over_dense_time": 0.07637231503579953
+    },
+    {
+      "seed": 20261112,
+      "activity": "0.01",
+      "query_mode": "every8",
+      "neurons": 32,
+      "horizon": 256,
+      "input_events": 78,
+      "actual_input_density": 0.009521484375,
+      "query_count": 32,
+      "spike_count": 55,
+      "all_outputs_exact": true,
+      "fixture_sha256": "ebd3ea5d0973c1774966ea18efed104ac76e6bce0add5369c77c6cf9bfb0bd7b",
+      "output_sha256": "f6be56c4df038b859b8243aed83e252d082b08d27448bda4eb6cd6504124db18",
+      "dense_ns": [
+        1113700,
+        2149500,
+        1249900
+      ],
+      "event_ns": [
+        452200,
+        463900,
+        451500
+      ],
+      "dense_median_ns": 1249900,
+      "event_median_ns": 452200,
+      "event_over_dense_time": 0.36178894311544924
+    },
+    {
+      "seed": 20261112,
+      "activity": "0.1",
+      "query_mode": "final",
+      "neurons": 32,
+      "horizon": 256,
+      "input_events": 805,
+      "actual_input_density": 0.0982666015625,
+      "query_count": 1,
+      "spike_count": 467,
+      "all_outputs_exact": true,
+      "fixture_sha256": "8a638d1da35e27a60be7ed3f5a89a73266ddc547f1cec035aabd51dd5d61ee86",
+      "output_sha256": "d7086597575bda5ccf473b546b524efc567ca47dd2bb8032f6ff3adbeee2d42c",
+      "dense_ns": [
+        1644800,
+        1567200,
+        1614200
+      ],
+      "event_ns": [
+        721200,
+        716900,
+        714500
+      ],
+      "dense_median_ns": 1614200,
+      "event_median_ns": 716900,
+      "event_over_dense_time": 0.444120926774873
+    },
+    {
+      "seed": 20261112,
+      "activity": "0.1",
+      "query_mode": "every8",
+      "neurons": 32,
+      "horizon": 256,
+      "input_events": 805,
+      "actual_input_density": 0.0982666015625,
+      "query_count": 32,
+      "spike_count": 467,
+      "all_outputs_exact": true,
+      "fixture_sha256": "46aa0e66140c9f9c6c3fbd318df0bdbc52ce35a0d248ec2fe923e57f732097f1",
+      "output_sha256": "b6e7cd7428da4aba59b354065408265ce2a4e71fc921741de3681f9ab83257f4",
+      "dense_ns": [
+        1666800,
+        1619100,
+        1615100
+      ],
+      "event_ns": [
+        938500,
+        999100,
+        1039900
+      ],
+      "dense_median_ns": 1619100,
+      "event_median_ns": 999100,
+      "event_over_dense_time": 0.6170712124019517
+    },
+    {
+      "seed": 20261112,
+      "activity": "0.5",
+      "query_mode": "final",
+      "neurons": 32,
+      "horizon": 256,
+      "input_events": 4121,
+      "actual_input_density": 0.5030517578125,
+      "query_count": 1,
+      "spike_count": 2436,
+      "all_outputs_exact": true,
+      "fixture_sha256": "980b1fb5e5c3017c4adcf29e296d02aaf565f050c490f3fa1ab09ba0b228352e",
+      "output_sha256": "2a3e5548722e0a589813fe8101c82235d4786fb748574b57dc0ad4a0b744b210",
+      "dense_ns": [
+        4118400,
+        3423200,
+        3288300
+      ],
+      "event_ns": [
+        3528600,
+        4021400,
+        3256800
+      ],
+      "dense_median_ns": 3423200,
+      "event_median_ns": 3528600,
+      "event_over_dense_time": 1.0307899041832205
+    },
+    {
+      "seed": 20261112,
+      "activity": "0.5",
+      "query_mode": "every8",
+      "neurons": 32,
+      "horizon": 256,
+      "input_events": 4121,
+      "actual_input_density": 0.5030517578125,
+      "query_count": 32,
+      "spike_count": 2436,
+      "all_outputs_exact": true,
+      "fixture_sha256": "d9baa44fb5443612514096aff09a764dbebbe674bca0d0033342d452b8c2b0bf",
+      "output_sha256": "63440933cb704ea8f733d45a690f7bf7637f84b655452826bb5ab80e7f9eca01",
+      "dense_ns": [
+        3320100,
+        3761000,
+        3582500
+      ],
+      "event_ns": [
+        3394000,
+        4076800,
+        3323900
+      ],
+      "dense_median_ns": 3582500,
+      "event_median_ns": 3394000,
+      "event_over_dense_time": 0.9473831123517097
+    },
+    {
+      "seed": 20261112,
+      "activity": "1",
+      "query_mode": "final",
+      "neurons": 32,
+      "horizon": 256,
+      "input_events": 8192,
+      "actual_input_density": 1.0,
+      "query_count": 1,
+      "spike_count": 4948,
+      "all_outputs_exact": true,
+      "fixture_sha256": "62cf52d5998f678f76b05ae28f0b0e1fc9e00db96d8be6ab24c5ed94a1d11ab9",
+      "output_sha256": "d0467c02d5b69f896c4da179b2935ad4c848410469b3e93943d62f3a9dd9b8ee",
+      "dense_ns": [
+        5734700,
+        5539800,
+        6529900
+      ],
+      "event_ns": [
+        6121500,
+        6239000,
+        8106900
+      ],
+      "dense_median_ns": 5734700,
+      "event_median_ns": 6239000,
+      "event_over_dense_time": 1.087938340279352
+    },
+    {
+      "seed": 20261112,
+      "activity": "1",
+      "query_mode": "every8",
+      "neurons": 32,
+      "horizon": 256,
+      "input_events": 8192,
+      "actual_input_density": 1.0,
+      "query_count": 32,
+      "spike_count": 4948,
+      "all_outputs_exact": true,
+      "fixture_sha256": "780152faee7cf2ff558af8cf5c25fe8bd990c112b8fdb9e85fe8ea848148cb98",
+      "output_sha256": "4e21124ba8b03555c45ce63e1caaf0a535585505a490abc2f0378c5e1bf0b86d",
+      "dense_ns": [
+        5305200,
+        5354900,
+        5291300
+      ],
+      "event_ns": [
+        5988300,
+        6492000,
+        6236500
+      ],
+      "dense_median_ns": 5305200,
+      "event_median_ns": 6236500,
+      "event_over_dense_time": 1.175544748548594
+    },
+    {
+      "seed": 20261112,
+      "activity": "burst",
+      "query_mode": "final",
+      "neurons": 32,
+      "horizon": 256,
+      "input_events": 760,
+      "actual_input_density": 0.0927734375,
+      "query_count": 1,
+      "spike_count": 463,
+      "all_outputs_exact": true,
+      "fixture_sha256": "799dc089efe1c7797a6206577470a1e253824b4135bedc9e41786b637047584b",
+      "output_sha256": "15f2e270bc48559b1d4bf856a80440ba3043b66706aab184e282a30e4c0b4f5c",
+      "dense_ns": [
+        2717500,
+        2221500,
+        1089700
+      ],
+      "event_ns": [
+        1468700,
+        622900,
+        614400
+      ],
+      "dense_median_ns": 2221500,
+      "event_median_ns": 622900,
+      "event_over_dense_time": 0.2803961287418411
+    },
+    {
+      "seed": 20261112,
+      "activity": "burst",
+      "query_mode": "every8",
+      "neurons": 32,
+      "horizon": 256,
+      "input_events": 760,
+      "actual_input_density": 0.0927734375,
+      "query_count": 32,
+      "spike_count": 463,
+      "all_outputs_exact": true,
+      "fixture_sha256": "54d70ada6af321af5583e6c9efd9803e9db905160f54646c57c671c8e9aa1021",
+      "output_sha256": "38548dc2c72903575afd3dd3b2e320263144746b6a95ff7a20b62de831b4782d",
+      "dense_ns": [
+        1146400,
+        1143300,
+        1088600
+      ],
+      "event_ns": [
+        868100,
+        883200,
+        1523500
+      ],
+      "dense_median_ns": 1143300,
+      "event_median_ns": 883200,
+      "event_over_dense_time": 0.7725006559958016
+    },
+    {
+      "seed": 20261113,
+      "activity": "0",
+      "query_mode": "final",
+      "neurons": 32,
+      "horizon": 256,
+      "input_events": 0,
+      "actual_input_density": 0.0,
+      "query_count": 1,
+      "spike_count": 15,
+      "all_outputs_exact": true,
+      "fixture_sha256": "06c72356de7592c875a8f53c7b453ab5ae2abfbffd51f5cb6ec27c81c7b94873",
+      "output_sha256": "aa25f7fafdc0973467ac99834d75668aa99702c973196860003703a4dae23412",
+      "dense_ns": [
+        624100,
+        615900,
+        609800
+      ],
+      "event_ns": [
+        71000,
+        65100,
+        90200
+      ],
+      "dense_median_ns": 615900,
+      "event_median_ns": 71000,
+      "event_over_dense_time": 0.11527845429452833
+    },
+    {
+      "seed": 20261113,
+      "activity": "0",
+      "query_mode": "every8",
+      "neurons": 32,
+      "horizon": 256,
+      "input_events": 0,
+      "actual_input_density": 0.0,
+      "query_count": 32,
+      "spike_count": 15,
+      "all_outputs_exact": true,
+      "fixture_sha256": "fb42f7d5441a1f9bb55248f9e5c3d2ac15f4ae2c1985f3073613ba201943d85d",
+      "output_sha256": "1e0b0d8924809904902580385d56be50a41808b50acf301ea4b39cd204a68d3d",
+      "dense_ns": [
+        618300,
+        622600,
+        624400
+      ],
+      "event_ns": [
+        413400,
+        390100,
+        382500
+      ],
+      "dense_median_ns": 622600,
+      "event_median_ns": 390100,
+      "event_over_dense_time": 0.6265660134918085
+    },
+    {
+      "seed": 20261113,
+      "activity": "0.01",
+      "query_mode": "final",
+      "neurons": 32,
+      "horizon": 256,
+      "input_events": 97,
+      "actual_input_density": 0.0118408203125,
+      "query_count": 1,
+      "spike_count": 59,
+      "all_outputs_exact": true,
+      "fixture_sha256": "fdd13d24ee5e84a89833f1d3ddaf3f00298fe6633b96db35ca08ce194e0915d0",
+      "output_sha256": "55b40612c8841888877e956ae2e5aafd52f37ea1e41b0933d3ebfdede9c0cb6c",
+      "dense_ns": [
+        2786300,
+        1083700,
+        1116300
+      ],
+      "event_ns": [
+        164000,
+        189000,
+        178500
+      ],
+      "dense_median_ns": 1116300,
+      "event_median_ns": 178500,
+      "event_over_dense_time": 0.15990325181402848
+    },
+    {
+      "seed": 20261113,
+      "activity": "0.01",
+      "query_mode": "every8",
+      "neurons": 32,
+      "horizon": 256,
+      "input_events": 97,
+      "actual_input_density": 0.0118408203125,
+      "query_count": 32,
+      "spike_count": 59,
+      "all_outputs_exact": true,
+      "fixture_sha256": "a1528a085cc8fe883f0dbe46eff21e2e97729483f35a0073d7bb35c733c4a16a",
+      "output_sha256": "817a8bb705398497180a349197e80e4ceb580c44ab38f3a3d59e07fe2419ead1",
+      "dense_ns": [
+        1177900,
+        1106500,
+        1122000
+      ],
+      "event_ns": [
+        495300,
+        513900,
+        541700
+      ],
+      "dense_median_ns": 1122000,
+      "event_median_ns": 513900,
+      "event_over_dense_time": 0.45802139037433154
+    },
+    {
+      "seed": 20261113,
+      "activity": "0.1",
+      "query_mode": "final",
+      "neurons": 32,
+      "horizon": 256,
+      "input_events": 809,
+      "actual_input_density": 0.0987548828125,
+      "query_count": 1,
+      "spike_count": 459,
+      "all_outputs_exact": true,
+      "fixture_sha256": "d8c9371b921f83c78d1ff50beacb051e7725af42da0c1ed9ee29527256421541",
+      "output_sha256": "234a377f959f374b97021b2fbff975eb26760b5c05cd4f231da0924582ed438a",
+      "dense_ns": [
+        1583800,
+        1783100,
+        1699400
+      ],
+      "event_ns": [
+        732700,
+        714600,
+        723100
+      ],
+      "dense_median_ns": 1699400,
+      "event_median_ns": 723100,
+      "event_over_dense_time": 0.42550311874779334
+    },
+    {
+      "seed": 20261113,
+      "activity": "0.1",
+      "query_mode": "every8",
+      "neurons": 32,
+      "horizon": 256,
+      "input_events": 809,
+      "actual_input_density": 0.0987548828125,
+      "query_count": 32,
+      "spike_count": 459,
+      "all_outputs_exact": true,
+      "fixture_sha256": "2f2ffbe58cfb7b0b84f806e6c99c60c1371773caa1ddb0bae375593003560950",
+      "output_sha256": "43813d6594292ce6ebf7e320b585b54678c7eda223f1154ec2d38114d6ee8a76",
+      "dense_ns": [
+        1699000,
+        1627500,
+        1583300
+      ],
+      "event_ns": [
+        951700,
+        1036600,
+        964200
+      ],
+      "dense_median_ns": 1627500,
+      "event_median_ns": 964200,
+      "event_over_dense_time": 0.592442396313364
+    },
+    {
+      "seed": 20261113,
+      "activity": "0.5",
+      "query_mode": "final",
+      "neurons": 32,
+      "horizon": 256,
+      "input_events": 4075,
+      "actual_input_density": 0.4974365234375,
+      "query_count": 1,
+      "spike_count": 2434,
+      "all_outputs_exact": true,
+      "fixture_sha256": "2c62ce8618565c885a1e009233dd516cb1f751e4500197a572829c84f6d7ade5",
+      "output_sha256": "48c3d143c602371ec67bed7ea5a69695da03c8258495fda93b601384073e8bd4",
+      "dense_ns": [
+        3711500,
+        4380700,
+        3345700
+      ],
+      "event_ns": [
+        3295000,
+        4532700,
+        3042200
+      ],
+      "dense_median_ns": 3711500,
+      "event_median_ns": 3295000,
+      "event_over_dense_time": 0.8877812205307827
+    },
+    {
+      "seed": 20261113,
+      "activity": "0.5",
+      "query_mode": "every8",
+      "neurons": 32,
+      "horizon": 256,
+      "input_events": 4075,
+      "actual_input_density": 0.4974365234375,
+      "query_count": 32,
+      "spike_count": 2434,
+      "all_outputs_exact": true,
+      "fixture_sha256": "536a46bc0cd3eb44099fb99a0ae7b40ac12e5a8ae2a68d0a80763def4148b174",
+      "output_sha256": "4315ca799439f6683164cefe3381a13f6aead35540895b8dea761cb098ae553e",
+      "dense_ns": [
+        5124900,
+        5136800,
+        3506300
+      ],
+      "event_ns": [
+        5592800,
+        3397500,
+        3430600
+      ],
+      "dense_median_ns": 5124900,
+      "event_median_ns": 3430600,
+      "event_over_dense_time": 0.6693984272863861
+    },
+    {
+      "seed": 20261113,
+      "activity": "1",
+      "query_mode": "final",
+      "neurons": 32,
+      "horizon": 256,
+      "input_events": 8192,
+      "actual_input_density": 1.0,
+      "query_count": 1,
+      "spike_count": 4913,
+      "all_outputs_exact": true,
+      "fixture_sha256": "55d1603fa4ceccbeb9d45cc43ab5950dd69516670a6726583ed784709b82264d",
+      "output_sha256": "b0addfac86a0cb123d67f29cfc4178fb2e2dc377217b4f9902715d9e1bd3cc56",
+      "dense_ns": [
+        6062800,
+        7068300,
+        6557200
+      ],
+      "event_ns": [
+        7318700,
+        7793300,
+        8151000
+      ],
+      "dense_median_ns": 6557200,
+      "event_median_ns": 7793300,
+      "event_over_dense_time": 1.188510339779174
+    },
+    {
+      "seed": 20261113,
+      "activity": "1",
+      "query_mode": "every8",
+      "neurons": 32,
+      "horizon": 256,
+      "input_events": 8192,
+      "actual_input_density": 1.0,
+      "query_count": 32,
+      "spike_count": 4913,
+      "all_outputs_exact": true,
+      "fixture_sha256": "df375d6c551406c7b4226ff3edb0c090c3302ef26ddb9a97ad88db7d71e5720f",
+      "output_sha256": "4266d3cc519097c291ff09c45ca161695f841d4de8f2bcf75dd88bc823e3a20c",
+      "dense_ns": [
+        5624700,
+        5429400,
+        10327700
+      ],
+      "event_ns": [
+        10723000,
+        6826900,
+        6311000
+      ],
+      "dense_median_ns": 5624700,
+      "event_median_ns": 6826900,
+      "event_over_dense_time": 1.2137358436894412
+    },
+    {
+      "seed": 20261113,
+      "activity": "burst",
+      "query_mode": "final",
+      "neurons": 32,
+      "horizon": 256,
+      "input_events": 777,
+      "actual_input_density": 0.0948486328125,
+      "query_count": 1,
+      "spike_count": 482,
+      "all_outputs_exact": true,
+      "fixture_sha256": "527be16876c46bc7f5e7a90f437529119ee7a9c4f6069e1614519f3e87d0235f",
+      "output_sha256": "b34334eed6509513528da0761f3102d498590463cb2bb4d07c10b401d2d4fad8",
+      "dense_ns": [
+        1098600,
+        1095300,
+        1195200
+      ],
+      "event_ns": [
+        638600,
+        624000,
+        641200
+      ],
+      "dense_median_ns": 1098600,
+      "event_median_ns": 638600,
+      "event_over_dense_time": 0.581285272164573
+    },
+    {
+      "seed": 20261113,
+      "activity": "burst",
+      "query_mode": "every8",
+      "neurons": 32,
+      "horizon": 256,
+      "input_events": 777,
+      "actual_input_density": 0.0948486328125,
+      "query_count": 32,
+      "spike_count": 482,
+      "all_outputs_exact": true,
+      "fixture_sha256": "b5e703b259e5f6dbcbcf838200dd14f252066a44dda5dbb7ad6083cc3b4bdf85",
+      "output_sha256": "31b5942d72d5c3abd0fe6345d144dd9dd020d9111a03e603d70341cb56f35e0f",
+      "dense_ns": [
+        1206500,
+        1267700,
+        2683300
+      ],
+      "event_ns": [
+        854200,
+        864900,
+        858600
+      ],
+      "dense_median_ns": 1267700,
+      "event_median_ns": 858600,
+      "event_over_dense_time": 0.6772895795535221
+    },
+    {
+      "seed": 20261114,
+      "activity": "0",
+      "query_mode": "final",
+      "neurons": 32,
+      "horizon": 256,
+      "input_events": 0,
+      "actual_input_density": 0.0,
+      "query_count": 1,
+      "spike_count": 15,
+      "all_outputs_exact": true,
+      "fixture_sha256": "91081f9d4cb65e3edf513744d902ddd7592a097297aebd3f19bd29a3a1144b00",
+      "output_sha256": "b1ffa0df26022d2fa71155e97c12bc42ac706c3af9764408db9801b7f7ccc595",
+      "dense_ns": [
+        614400,
+        630300,
+        681000
+      ],
+      "event_ns": [
+        75200,
+        65500,
+        63700
+      ],
+      "dense_median_ns": 630300,
+      "event_median_ns": 65500,
+      "event_over_dense_time": 0.10391876884023481
+    },
+    {
+      "seed": 20261114,
+      "activity": "0",
+      "query_mode": "every8",
+      "neurons": 32,
+      "horizon": 256,
+      "input_events": 0,
+      "actual_input_density": 0.0,
+      "query_count": 32,
+      "spike_count": 15,
+      "all_outputs_exact": true,
+      "fixture_sha256": "df2ffa34979e034f11c38096ff121da8a8d8963adbabf84e55c20e1c7265d571",
+      "output_sha256": "ccdbf13d9d6d9a7c8bdd37f2bcd6c0ec8cd888aac07f31b06fce178d2970ab55",
+      "dense_ns": [
+        822000,
+        640200,
+        643300
+      ],
+      "event_ns": [
+        446100,
+        436300,
+        427700
+      ],
+      "dense_median_ns": 643300,
+      "event_median_ns": 436300,
+      "event_over_dense_time": 0.6782216695165553
+    },
+    {
+      "seed": 20261114,
+      "activity": "0.01",
+      "query_mode": "final",
+      "neurons": 32,
+      "horizon": 256,
+      "input_events": 66,
+      "actual_input_density": 0.008056640625,
+      "query_count": 1,
+      "spike_count": 44,
+      "all_outputs_exact": true,
+      "fixture_sha256": "0171f2e43f7cb79087964d06802d78f85236c2d13b879a0d802b205f5f3f13d9",
+      "output_sha256": "088f28498017ba3061497a06027003bfcc3541de8b705429dbe9946e9221ec93",
+      "dense_ns": [
+        1174900,
+        1058700,
+        1093700
+      ],
+      "event_ns": [
+        145200,
+        145400,
+        133800
+      ],
+      "dense_median_ns": 1093700,
+      "event_median_ns": 145200,
+      "event_over_dense_time": 0.1327603547590747
+    },
+    {
+      "seed": 20261114,
+      "activity": "0.01",
+      "query_mode": "every8",
+      "neurons": 32,
+      "horizon": 256,
+      "input_events": 66,
+      "actual_input_density": 0.008056640625,
+      "query_count": 32,
+      "spike_count": 44,
+      "all_outputs_exact": true,
+      "fixture_sha256": "7e1a2e7a1e76262196d449885b2bdb3f3caf4da570ba424faccd7aff659df21c",
+      "output_sha256": "324fd84936c7dbef72e7756ab39440b4dea73cd46161730c6dcf76339df2bd1b",
+      "dense_ns": [
+        1129100,
+        1077800,
+        1078500
+      ],
+      "event_ns": [
+        541200,
+        522800,
+        553300
+      ],
+      "dense_median_ns": 1078500,
+      "event_median_ns": 541200,
+      "event_over_dense_time": 0.501808066759388
+    },
+    {
+      "seed": 20261114,
+      "activity": "0.1",
+      "query_mode": "final",
+      "neurons": 32,
+      "horizon": 256,
+      "input_events": 824,
+      "actual_input_density": 0.1005859375,
+      "query_count": 1,
+      "spike_count": 450,
+      "all_outputs_exact": true,
+      "fixture_sha256": "bac00daeb385d8690d7fd0f5b9e88dc4b68469e408875a68c51b9cc7aa930709",
+      "output_sha256": "79d81182def995cf66bb33407aa93c68fc4c0bbf1ed13672f45b6bb419d64916",
+      "dense_ns": [
+        1930300,
+        2637300,
+        2572200
+      ],
+      "event_ns": [
+        778000,
+        749500,
+        742500
+      ],
+      "dense_median_ns": 2572200,
+      "event_median_ns": 749500,
+      "event_over_dense_time": 0.2913848067801882
+    },
+    {
+      "seed": 20261114,
+      "activity": "0.1",
+      "query_mode": "every8",
+      "neurons": 32,
+      "horizon": 256,
+      "input_events": 824,
+      "actual_input_density": 0.1005859375,
+      "query_count": 32,
+      "spike_count": 450,
+      "all_outputs_exact": true,
+      "fixture_sha256": "9f9e24dc17ea446148c4c463a3bc33726e0e6dddb62340e190268c959ccbe2b1",
+      "output_sha256": "97383162db66fa67cc00a0852a4346fb87bed4bfc3fc38e4efdffb919a10ee43",
+      "dense_ns": [
+        1594500,
+        1877800,
+        1776100
+      ],
+      "event_ns": [
+        996500,
+        981600,
+        961700
+      ],
+      "dense_median_ns": 1776100,
+      "event_median_ns": 981600,
+      "event_over_dense_time": 0.552671583807218
+    },
+    {
+      "seed": 20261114,
+      "activity": "0.5",
+      "query_mode": "final",
+      "neurons": 32,
+      "horizon": 256,
+      "input_events": 4060,
+      "actual_input_density": 0.49560546875,
+      "query_count": 1,
+      "spike_count": 2395,
+      "all_outputs_exact": true,
+      "fixture_sha256": "fa9217c730aa50b55b9e440e754f8f0dfe5050b38c03ac070d2c93197d9a5213",
+      "output_sha256": "e8d3678f2aad5b4538c25723d206fc1c96ec74215379f9a01134d197eb32f75a",
+      "dense_ns": [
+        3184800,
+        3222100,
+        3355300
+      ],
+      "event_ns": [
+        4470800,
+        3999000,
+        3958400
+      ],
+      "dense_median_ns": 3222100,
+      "event_median_ns": 3999000,
+      "event_over_dense_time": 1.2411160423326402
+    },
+    {
+      "seed": 20261114,
+      "activity": "0.5",
+      "query_mode": "every8",
+      "neurons": 32,
+      "horizon": 256,
+      "input_events": 4060,
+      "actual_input_density": 0.49560546875,
+      "query_count": 32,
+      "spike_count": 2395,
+      "all_outputs_exact": true,
+      "fixture_sha256": "d88ad9cd667f8c3238037a22fb275438634247abdb250a7f2e58bc5f77f3d298",
+      "output_sha256": "395ea904aaa6165c4b8299cba88c79468c05e89c98765e6a07ee88b2c6448231",
+      "dense_ns": [
+        3265300,
+        3351300,
+        3330000
+      ],
+      "event_ns": [
+        3209900,
+        3265900,
+        4208300
+      ],
+      "dense_median_ns": 3330000,
+      "event_median_ns": 3265900,
+      "event_over_dense_time": 0.9807507507507508
+    },
+    {
+      "seed": 20261114,
+      "activity": "1",
+      "query_mode": "final",
+      "neurons": 32,
+      "horizon": 256,
+      "input_events": 8192,
+      "actual_input_density": 1.0,
+      "query_count": 1,
+      "spike_count": 4969,
+      "all_outputs_exact": true,
+      "fixture_sha256": "cb8fe85b333b940391cfa1da5ecdd2acc4d8db7812c219560e8bf4faae6a732f",
+      "output_sha256": "5c09da937a74b3bb77fccb63432e235f4a377ee75de5f5d4c7bfaa44c9426e50",
+      "dense_ns": [
+        5284800,
+        5588000,
+        5389600
+      ],
+      "event_ns": [
+        6052400,
+        7738200,
+        6185800
+      ],
+      "dense_median_ns": 5389600,
+      "event_median_ns": 6185800,
+      "event_over_dense_time": 1.1477289594775122
+    },
+    {
+      "seed": 20261114,
+      "activity": "1",
+      "query_mode": "every8",
+      "neurons": 32,
+      "horizon": 256,
+      "input_events": 8192,
+      "actual_input_density": 1.0,
+      "query_count": 32,
+      "spike_count": 4969,
+      "all_outputs_exact": true,
+      "fixture_sha256": "fcd965a5fa2af58b089821ce95e41bec9864a115701127c3e669b0937a5f623c",
+      "output_sha256": "7f65b73a2a083b4df1d5ff6579eae610107571c543c0dadf220cc4864b3de8e7",
+      "dense_ns": [
+        5252000,
+        7524400,
+        6510900
+      ],
+      "event_ns": [
+        9997800,
+        6233000,
+        6339000
+      ],
+      "dense_median_ns": 6510900,
+      "event_median_ns": 6339000,
+      "event_over_dense_time": 0.9735981200755656
+    },
+    {
+      "seed": 20261114,
+      "activity": "burst",
+      "query_mode": "final",
+      "neurons": 32,
+      "horizon": 256,
+      "input_events": 766,
+      "actual_input_density": 0.093505859375,
+      "query_count": 1,
+      "spike_count": 478,
+      "all_outputs_exact": true,
+      "fixture_sha256": "5a9b42e2ef7646269d0e38b5fe93f151ac4fa7b064842b1924433a5d45ebc7b2",
+      "output_sha256": "e24476465cb891d2340ba8b2e4722a736968b886d1b39297145fd8a0bfbfc68b",
+      "dense_ns": [
+        2299300,
+        1089200,
+        1722900
+      ],
+      "event_ns": [
+        612500,
+        609000,
+        661400
+      ],
+      "dense_median_ns": 1722900,
+      "event_median_ns": 612500,
+      "event_over_dense_time": 0.3555052527714899
+    },
+    {
+      "seed": 20261114,
+      "activity": "burst",
+      "query_mode": "every8",
+      "neurons": 32,
+      "horizon": 256,
+      "input_events": 766,
+      "actual_input_density": 0.093505859375,
+      "query_count": 32,
+      "spike_count": 478,
+      "all_outputs_exact": true,
+      "fixture_sha256": "3bce42bef94f90d4094efd97b569dc384df51f9d303a2e4febc1ba26126bd665",
+      "output_sha256": "2db48bd14e76fb6039dccd729fc60c36812543d44a58e5aadac899d67e603453",
+      "dense_ns": [
+        1135500,
+        1128600,
+        1162300
+      ],
+      "event_ns": [
+        978000,
+        951100,
+        962100
+      ],
+      "dense_median_ns": 1135500,
+      "event_median_ns": 962100,
+      "event_over_dense_time": 0.8472919418758257
+    }
+  ]
+}
